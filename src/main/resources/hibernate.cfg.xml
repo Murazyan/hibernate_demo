@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">jdbc:postgresql://localhost:5432/hibernate_demo</property>
+        <property name="connection.username">postgress</property>
+        <property name="connection.password">devm</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+
+        <!--        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate_demo?serverTimezone=UTC&useSSL=false</property>-->
+        <!--        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>-->
+        <!--        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>-->
+
+        <property name="show_sql">false</property>
+        <property name="format_sql">false</property>
+<!--        <property name="hbm2ddl.auto">create-drop</property>-->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <property name="connection.pool_size">5</property>
+        <property name="current_session_context_class">thread</property>
+
+        <mapping class="org.example.hibernate_demo.models.User"/>
+        <mapping class="org.example.hibernate_demo.models.Address"/>
+        <mapping class="org.example.hibernate_demo.models.Article"/>
+
+    </session-factory>
+</hibernate-configuration>
